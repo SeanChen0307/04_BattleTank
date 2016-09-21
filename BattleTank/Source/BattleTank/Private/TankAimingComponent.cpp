@@ -5,7 +5,7 @@
 
 
 // Sets default values for this component's properties
-UTankAimngComponent::UTankAimngComponent()
+UTankAimingComponent::UTankAimingComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -14,14 +14,14 @@ UTankAimngComponent::UTankAimngComponent()
 
 	// ...
 }
-void UTankAimngComponent::SetBarrelReferecne(UStaticMeshComponent* BarrelToSet)
+void UTankAimingComponent::SetBarrelReferecne(UStaticMeshComponent* BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
 
 
 // Called when the game starts
-void UTankAimngComponent::BeginPlay()
+void UTankAimingComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -29,16 +29,15 @@ void UTankAimngComponent::BeginPlay()
 	
 }
 // Called every frame
-void UTankAimngComponent::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
+void UTankAimingComponent::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
 	// ...
 }
 
-void UTankAimngComponent::AimAt(FVector HitLocation)
+void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
-	auto OurTankName = GetOwner()->GetName();
-	auto BarrelLocation = Barrel->GetComponentLocation().ToString();
-	UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s from %s"), *OurTankName, *HitLocation.ToString(), *BarrelLocation);
+
+	UE_LOG(LogTemp, Warning, TEXT("Firing at %f"), LaunchSpeed);
 }
