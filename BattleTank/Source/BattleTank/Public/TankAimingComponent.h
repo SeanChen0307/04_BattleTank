@@ -15,7 +15,7 @@ public:
 	// Sets default values for this component's properties
 	UTankAimingComponent();
 
-	void SetBarrelReferecne(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 	// Called when the game starts
 	virtual void BeginPlay() override;
